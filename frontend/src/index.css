@@ -1,3 +1,52 @@
+:root {
+  /*grayscale*/
+  --Header-color: #14142B;
+  --Header-Weak-color: #262338;
+  --Body-color: #4E4B66;
+  --Label-color: #6E7191;
+  --Placehold-color: #A0A3BD;
+  --Line-color: #D9DBE9;
+  --Input-color: #EFF0F6;
+  --BG-Weak-color: #F7F7FC;
+  --BG-color: #FCFCFC;
+
+  /*Primary*/
+  --Default-Strong-Primary: #4700AB;
+  --Default-Primary: #610BEF;
+  --Default-Weak-Primary: #A996FF;
+  --BG-strong-Primary: #BFBEFC;
+  --BG-Primary: #EBECFE;
+
+  /*Secondary*/
+  --Dark-Secondary: #0041AC;
+  --Default-Secondary: #005BD4;
+  --Default-Weak-Secondary: #50C8FC;
+  --BG-strong-Secondary: #8DE9FF;
+  --BG-Secondary: #E3FEFF;
+
+  /*Error*/
+  --Default-Strong-Error: #9E0038;
+  --Default-Error: #CA024F;
+  --Default-Weak-Error: #FF75CB;
+  --BG-strong-Error: #FFABE8;
+  --BG-Error: #FFECFC;
+
+  /*Success*/
+  --Default-Strong-Success: #067306;
+  --Default-Success: #008A00;
+  --Default-Weak-Success: #A6F787;
+  --BG-strong-Success: #CBFFAE;
+  --BG-Success: #EAF9DE;
+
+  /*Warning*/
+  --Default-Strong-Warning: #946300;
+  --Default-Warning: #EAAC30;
+  --Default-Weak-Warning: #FFDF9A;
+  --BG-strong-Warning: #FFE6B0;
+  --BG-Warning: #FFF8E9;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
