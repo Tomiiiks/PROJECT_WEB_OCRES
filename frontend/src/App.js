@@ -1,13 +1,11 @@
 import './App.css';
-import Button from './Compenents/Button';
+import { Widget} from "./Compenents/Widget";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <Button name="test long" _class="bt Huge" />
-      <Button name="test long" _class="bt Large" />
-      <Button name="test long" _class="bt Medium" />
-      <Button name="test long" _class="bt small" />
+        <Widget />
     </div>
   );
 }
