@@ -3,34 +3,17 @@ import {WidgetComposition} from "./WidgetComposition";
 import widgetImg1 from "../stories/assets/img/widgetImg1.png";
 import widgetImg2 from "../stories/assets/img/widgetImg2.png";
 import './Widget.css';
+import {indexTranslate} from './GoogleTranslate/indexTranslate';
+
 
 export const Widget = () => {
 
     const widget = [
-        { title: "Widget 1",
-            description: "Conversion API",
-            imgUrl: widgetImg1,
+        { title: "",
+            description: "",
+            files: <indexTranslate />,
         },
-        { title: "Widget 2",
-            description: "Google Translate API",
-            imgUrl: widgetImg2,
-        },
-        { title: "Widget 3",
-            description: "Google flight API",
-            imgUrl: widgetImg1,
-        },
-        { title: "Widget 4",
-            description: "Search pictures API",
-            imgUrl: widgetImg1,
-        },
-        { title: "Widget 5",
-            description: "Booking API",
-            imgUrl: widgetImg1,
-        },
-        { title: "Widget 6",
-            description: "Google maps API",
-            imgUrl: widgetImg1,
-        },
+
 
     ];
 

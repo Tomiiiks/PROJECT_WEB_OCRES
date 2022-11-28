@@ -21,7 +21,7 @@
 
 #widget-tabs {
     margin-top: 30px;
-    width: 500px;
+    width: 400px;
 }
 
 .widget__composition{
@@ -29,7 +29,11 @@
     border-radius: 30px;
     overflow: hidden;
     margin-bottom: 23px;
-    height: 200px;
+    background-color: #1ea7fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 
 }
 
@@ -38,3 +42,4 @@
     position: absolute;
     text-align: center;
 }
+
