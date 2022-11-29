@@ -29,7 +29,6 @@
     border-radius: 30px;
     overflow: hidden;
     margin-bottom: 23px;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,6 +42,3 @@
     text-align: center;
 }
 
-section{
-    background-color: grey;
-}

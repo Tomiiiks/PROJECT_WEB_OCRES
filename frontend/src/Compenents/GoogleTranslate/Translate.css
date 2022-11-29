@@ -1,13 +1,13 @@
-.index-translate {
-  position: fixed;
-  height: 100px;
+.index-Translate {
+
+  height: auto;
   top: 0;
   right: 0;
   z-index: 999;
   width: 100%;
-display: flex;
+  display: flex;
   background-color: teal;
-  color: teal;
+  justify-content: center;
 }
 input{
   border: 1px solid green;

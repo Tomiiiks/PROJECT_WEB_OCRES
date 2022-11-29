@@ -13,8 +13,12 @@ export const Widget = () => {
             description: "",
             files: <IndexTranslate/>,
         },
+        {
+            title: "Meteo",
+            description: "Meteo",
+            files: "",
 
-
+        },
     ];
 
     return (
