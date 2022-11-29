@@ -3,7 +3,7 @@ import {WidgetComposition} from "./WidgetComposition";
 import widgetImg1 from "../stories/assets/img/widgetImg1.png";
 import widgetImg2 from "../stories/assets/img/widgetImg2.png";
 import './Widget.css';
-import {indexTranslate} from './GoogleTranslate/indexTranslate';
+import {IndexTranslate} from './GoogleTranslate/IndexTranslate';
 
 
 export const Widget = () => {
@@ -11,7 +11,7 @@ export const Widget = () => {
     const widget = [
         { title: "",
             description: "",
-            files: <indexTranslate />,
+            files: <IndexTranslate/>,
         },
 
 

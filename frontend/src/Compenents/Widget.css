@@ -29,7 +29,7 @@
     border-radius: 30px;
     overflow: hidden;
     margin-bottom: 23px;
-    background-color: #1ea7fd;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,3 +43,6 @@
     text-align: center;
 }
 
+section{
+    background-color: grey;
+}

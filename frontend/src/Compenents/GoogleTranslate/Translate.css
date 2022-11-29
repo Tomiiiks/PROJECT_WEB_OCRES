@@ -6,7 +6,8 @@
   z-index: 999;
   width: 100%;
 display: flex;
-  background-color: #1ea7fd;
+  background-color: teal;
+  color: teal;
 }
 input{
   border: 1px solid green;
@@ -42,6 +43,10 @@ textarea{
   align-items: center;
 }
 
+.input textarea {
+
+}
+
 .select-drop-down input{
   padding: 5px 15px;
   color: red;
@@ -50,11 +55,41 @@ textarea{
 
 .select-drop-down .down-arrow svg {
   position: relative;
-  left: 135px;
-  top: 15px;
+  left: 85px;
+
   width: 30px;
   height: 30px;
   fill: red;
 
+}
+
+.arrow-container{
+  padding: 15px;
+}
+.arrow-container svg{
+  width: 26px;
+  height: 26px;
+  fill: red;
+}
+
+.language-list{
+  width: 90%;
+  color: #FFF8E9;
+
+}
+
+.search-list{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.search-list .close-button svg {
+
+  z-index:10;
+  width: 30px;
+  height: 30px;
+  padding: 20px;
+  fill: #6E7191;
 }
 
