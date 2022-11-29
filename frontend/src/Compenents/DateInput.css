@@ -1,0 +1,38 @@
+.date {
+    position: absolute;
+    background-color: var(--Header-Weak-color);
+    background-image: url('../stories/assets/img/CircleActionsPlaceholder.svg');
+    background-position: 10px 9px;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 1em;
+    height: 3.25em;
+    min-width: 17.5em;
+
+    caret-color: var(--Line-color);
+    color: var(--BG-color);
+    transition: 0.3s;
+}
+
+.divDate {
+    position: relative;
+    height: 3.25em;
+    max-width: 17.5em;
+    min-width: 8.75em;
+
+}
+
+.labelDate {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.inputDate {
+    position: absolute;
+    display: none;
+}
+
+input:checked~.date {
+    background-color: var(--BG-color);
+}
