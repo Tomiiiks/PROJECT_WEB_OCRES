@@ -1,0 +1,32 @@
+.Forme {
+    border: none;
+    border-radius: 30px;
+    background-color: var(--Header-color);
+    padding: 1rem;
+
+}
+
+.Navcont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    vertical-align: middle;
+}
+
+.h2p {
+    color: var(--BG-color);
+    margin: 0.5rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .Navcont {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        padding: 1rem;
+    }
+}

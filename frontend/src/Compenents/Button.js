@@ -1,11 +1,13 @@
-import "./Button.css";
-import { Component } from "react";
+import React from "react";
+import './Button.css';
+
+export default class Button extends React.Component {
 
 
-export default class Button extends Component {
     render() {
+        const { name, _class } = this.props;
         return (
-            <button class={this.props._class}>{this.props.name}</button>
-        );
+            <button class={_class}>{name}</button>
+        )
     }
 }
