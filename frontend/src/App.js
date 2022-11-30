@@ -1,16 +1,17 @@
 import './App.css';
-import { Widget} from "./Compenents/Widget";
+import { Widget } from "./Compenents/Widget";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar} from "react-bootstrap";
+import NavBar from "./Containers/NavBar"
 import { IndexTranslate } from './Compenents/GoogleTranslate/IndexTranslate';
-import {useState} from "react";
+import { useState } from "react";
 
 
 
 function App() {
   return (
     <div className="App">
-        <Widget />
+      <NavBar />
+      <Widget />
 
     </div>
   );
