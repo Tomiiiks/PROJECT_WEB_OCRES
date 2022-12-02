@@ -1,6 +1,7 @@
 import TextBox from "./TextBox";
 import Arrow from "./arrow";
-import button2 from "./button2";
+import Button2 from "./button2";
+
 import Modal from "./Modal";
 import "./Translate.css";
 import {useEffect, useState} from "react";
@@ -32,6 +33,16 @@ export const IndexTranslate = () => {
             console.error(error)
         })}
 
+const translate = () => {
+
+    fetch("http://localhost:3001/translate")
+        .then(response => response.json())
+        .then(translate => {
+            // this.setState({post: airports})
+            console.log(translate);
+        })
+        .catch(err => console.log(err));
+}
     //console.log('languages', languages)
 
     useEffect(() => {
@@ -58,6 +69,9 @@ export const IndexTranslate = () => {
                         style='input'
                         selectedLanguage={inputLanguage}
                         setShowModal={setShowModal}
+                        //setTextToTranslate={setTextToTranslate}
+                        //textToTranslate={textToTranslate}
+                        //setTranslatedText={setTranslatedText}
                     />
                     <div className="arrow-container" onClick={handleClick}>
                         <Arrow/>
@@ -66,9 +80,12 @@ export const IndexTranslate = () => {
                         style='output'
                         setShowModal={setShowModal}
                         selectedLanguage={outputLanguage}
+                        //translatedText={translatedText}
 
                     />
-                        <button2 />
+                        <div className="button-container" onClick={translate}>
+                            <Button2 />
+                        </div>
                </> }
                     {showModal && (<Modal setShowModal={setShowModal}
                     languages={languages}

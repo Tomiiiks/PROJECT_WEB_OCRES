@@ -1,6 +1,6 @@
-const Button2 = () => {
+const button2 = () => {
     return(
         <div>Button2</div>
     )
 }
-export default Button2;
+export default button2;
