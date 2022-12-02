@@ -32,11 +32,17 @@ export const IndexTranslate = () => {
             console.error(error)
         })}
 
-    console.log('languages', languages)
+    //console.log('languages', languages)
 
     useEffect(() => {
         getLanguages()
-    })
+    },[])
+
+    //ici
+
+    //ici
+
+
 
     const handleClick = () => {
         setInputLanguage(outputLanguage)

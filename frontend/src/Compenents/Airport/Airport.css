@@ -1,0 +1,31 @@
+
+
+body .first{
+    background-color: rgb(251,199,127);
+    justify-content: center;
+    height: 90vh;
+    color: #EFF0F6;
+    align-items: center;
+
+
+}
+
+body .second{
+
+    display: flex;
+}
+.h2 {
+    padding: 10px;
+}
+
+.first {
+
+
+    padding: 10px;
+}
+.first table{
+    background-color: #14142B;
+    text-align: left;
+    border-radius: 10px;
+}
+
