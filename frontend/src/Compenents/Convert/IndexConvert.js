@@ -30,7 +30,10 @@ export const IndexConvert = () => {
     return(
         <div className="conversion">
             <h1>Conversion</h1>
+
+            <div className="conversion__container">
             <convert/>
+            </div>
 
             <Button _class="bt Medium" name="GO" value="Envoyer" />
 

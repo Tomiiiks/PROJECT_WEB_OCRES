@@ -6,6 +6,7 @@ import Modal from "./Modal";
 import "./Translate.css";
 import {useEffect, useState} from "react";
 import axios from 'axios'
+import data from "bootstrap/js/src/dom/data";
 
 export const IndexTranslate = () => {
     const [showModal, setShowModal] = useState(false)
@@ -39,7 +40,7 @@ const translate = () => {
         .then(response => response.json())
         .then(translate => {
             // this.setState({post: airports})
-            console.log(translate);
+         console.table("ici",translate[0].translations[0].text)
         })
         .catch(err => console.log(err));
 }
@@ -83,7 +84,7 @@ const translate = () => {
                         //translatedText={translatedText}
 
                     />
-                        <div className="button-container" onClick={translate}>
+                        <div id="btn" className="button-container" onClick={translate}>
                             <Button2 />
                         </div>
                </> }

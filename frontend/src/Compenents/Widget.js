@@ -4,6 +4,7 @@ import './Widget.css';
 import {IndexTranslate} from './GoogleTranslate/IndexTranslate';
 import {IndexAirport} from "./Airport/IndexAirport";
 import {IndexConvert} from "./Convert/IndexConvert";
+import {IndexPicture} from "./Pictures/IndexPicture";
 
 
 export const Widget = () => {
@@ -29,6 +30,11 @@ export const Widget = () => {
             title: "Convertisseur",
             description: "Convertisseur",
             files: <IndexConvert />,
+        },
+        {
+            title: "Pic",
+            description: "",
+            files: <IndexPicture/>,
         }
     ];
 
