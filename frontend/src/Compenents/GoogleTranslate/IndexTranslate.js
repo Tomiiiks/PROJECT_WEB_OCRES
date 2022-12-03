@@ -38,33 +38,34 @@ export const IndexTranslate = () => {
     }
 
     const translate = async() => {
-/*
+
         //const textToTranslate = document.getElementById('input').textContent;
 
 
 
          //     console.log(document.getElementById('input').value);
-         console.log(textToTranslate);
+         const textToTranslate = "Hello";
+        console.log(textToTranslate);
 
-         await axios.post('http://localhost:3001/translation', {textToTranslate}
+
+        await axios.post('http://localhost:3001/translation', textToTranslate
          ).then((response) => {
              console.log("heho",response.data)
              setTranslatedText(response.data)
          }).catch((error) => {
              console.log(error)
          })
-     }*/
+     }
 
 
-        //{data: [{text: `${textToTranslate}`}]}
+        /*//{data: [{text: `${textToTranslate}`}]}
         const response = fetch("http://localhost:3001/translate",)
             .then(response => response.json())
             .then(translate => {
              console.log("ici",translate[0].translations[0].text)
             })
-            .catch(err => console.log(err));
-
-    }
+            .catch(err => console.log(err));/
+    }*/
         //console.log('languages', languages)
 
         useEffect(() => {
