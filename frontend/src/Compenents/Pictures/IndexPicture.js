@@ -14,15 +14,15 @@ export const IndexPicture = () => {
 
     const print = async() => {
 
+        const pageNumber='1';
+        const pageSize='1';
         const printPicture = "espana"
 
-        //const data = { printPicture }
+        const data = { printPicture ,pageNumber, pageSize} ;
 
         const output = document.getElementById("output");
 
-        const response = await axios.get("http://localhost:3001/picture", {
-           text: `${printPicture}`
-        })
+        const response = await axios.get("http://localhost:3001/picture", {params : data})
 
         console.log("hola", response.data)
         const show = response.data;
