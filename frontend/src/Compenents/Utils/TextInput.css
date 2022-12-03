@@ -1,7 +1,7 @@
 input[type="search"],
 input[type="text"] {
     background-color: var(--Header-Weak-color);
-    background-image: url('../stories/assets/img/CircleActionsPlaceholder.svg');
+    background-image: url('../../stories/assets/img/CircleActionsPlaceholder.svg');
     background-position: center left 10px;
     background-repeat: no-repeat;
     padding-left: 40px;
@@ -41,7 +41,7 @@ input::-webkit-search-cancel-button {
     input[type="search"],
     input[type="text"] {
         background-color: var(--Header-Weak-color);
-        background-image: url('../stories/assets/img/CircleActionsPlaceholder.svg');
+        background-image: url('../../stories/assets/img/CircleActionsPlaceholder.svg');
         background-position: center left 10px;
         background-repeat: no-repeat;
         padding-left: 40px;

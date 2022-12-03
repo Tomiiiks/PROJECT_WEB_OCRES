@@ -1,7 +1,5 @@
-
-
-body .first{
-    background-color: rgb(251,199,127);
+section .first {
+    background-color: rgb(251, 199, 127);
     justify-content: center;
     height: 90vh;
     color: #EFF0F6;
@@ -10,10 +8,11 @@ body .first{
 
 }
 
-body .second{
+section .second {
 
     display: flex;
 }
+
 .h2 {
     padding: 10px;
 }
@@ -23,9 +22,9 @@ body .second{
 
     padding: 10px;
 }
-.first table{
+
+.first table {
     background-color: #14142B;
     text-align: left;
     border-radius: 10px;
 }
-

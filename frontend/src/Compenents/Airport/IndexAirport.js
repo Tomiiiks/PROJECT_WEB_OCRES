@@ -1,25 +1,25 @@
 import "./Airport.css"
-import "../Button"
-import Button from "../Button";
-import {render} from "react-dom";
+import "../Utils/Button.css"
+import Button from "../Utils/Button";
+import { render } from "react-dom";
 
 export const IndexAirport = () => {
 
     //const tableBody=document.getElementById("table-body");
 
-    const getAirport = ()=>{
-       fetch("http://localhost:3001/airports")
-           .then(response => response.json())
-              .then(airports => {
-                 // this.setState({post: airports})
-                  console.log(airports);
-              })
-           .catch(err => console.log(err));
+    const getAirport = () => {
+        fetch("http://localhost:3001/airports")
+            .then(response => response.json())
+            .then(airports => {
+                // this.setState({post: airports})
+                console.log(airports);
+            })
+            .catch(err => console.log(err));
     }
 
 
 
-getAirport();
+    getAirport();
 
     /*const populateTable = (airports) => {
         for(const airport of airports){
@@ -51,36 +51,36 @@ getAirport();
                 tableRow.append(tableCell);
             }*/
 
-            //tableBody.append(tableRow);
-      //  }
-   // }
+    //tableBody.append(tableRow);
+    //  }
+    // }
 
 
-return(
+    return (
 
-    <div className="first">
-        <h2>Liste des Aéroports</h2>
-        <p>Cherher votre airport</p>
+        <div className="first">
+            <h2>Liste des Aéroports</h2>
+            <p>Cherher votre airport</p>
 
-        <input/>
-        <Button />
-        <div className="second">
-        <table>
+            <input />
+            <Button />
+            <div className="second">
+                <table>
 
-            <thead>
-                <tr>
-                    <th></th>
-                    <th id="Airport_Name">Airport Name</th>
-                    <th id="City">City -</th>
-                    <th id="Country"> Country -</th>
-                    <th id="Airport_Code">Airport Code</th>
-                </tr>
-            </thead>
-            <tbody id="table-body"></tbody>
-        </table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th id="Airport_Name">Airport Name</th>
+                            <th id="City">City -</th>
+                            <th id="Country"> Country -</th>
+                            <th id="Airport_Code">Airport Code</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
         </div>
-    </div>
 
-)
+    )
 
 }
