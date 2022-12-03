@@ -16,7 +16,7 @@ export const IndexPicture = () => {
 
         const pageNumber='1';
         const pageSize='1';
-        const printPicture = "espana"
+        const printPicture = "Madrid landscape";
 
         const data = { printPicture ,pageNumber, pageSize} ;
 
@@ -25,6 +25,7 @@ export const IndexPicture = () => {
         const response = await axios.get("http://localhost:3001/picture", {params : data})
 
         console.log("hola", response.data)
+
         const show = response.data;
         //output.innerHTML = show;
         const img = document.createElement("img");

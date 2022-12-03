@@ -24,8 +24,8 @@ router.get('/picture',   async (req,res) => {
     };
 
     axios.request(options).then(function (response) {
-        res.json(response.data)
-        //res.json(response.data.value[0].url) A remettre pour avoir l'url de l'image
+        //res.json(response.data)
+        res.json(response.data.value[0].url) //A remettre pour avoir l'url de l'image
     }).catch(function (error) {
         console.error(error);
     });
