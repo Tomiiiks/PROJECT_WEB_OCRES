@@ -1,42 +1,36 @@
 import "./Pictures.css"
 import Button from "../Button";
+import axios from "axios";
+import {useState} from "react";
 
 
 
 
 export const IndexPicture = () => {
 
-    const show = () => {
+    const [printPicture, setPrintPictures] = useState("");
 
-        fetch("http://localhost:3001/picture")
-            .then(response => response.json())
-            .then(show => {
-                // this.setState({post: airports})
-                console.table("ici",show.value[0].url )
-            })
-            .catch(err => console.log(err));
-    }
 
-    const print = () => {
+
+    const print = async() => {
+
+        const printPicture = "espana"
+
+        //const data = { printPicture }
 
         const output = document.getElementById("output");
 
+        const response = await axios.get("http://localhost:3001/picture", {
+           text: `${printPicture}`
+        })
 
-        fetch("http://localhost:3001/picture")
-            .then(response => response.json())
-            .then(show => {
-
-                //output.innerHTML = show.value[0].url
-
-                //output.textContent= `${show.value[0].url}`
-                const img= document.createElement("img");
-                img.src= `${show.value[0].url}`
-                output.appendChild(img);
-            })
-
-
+        console.log("hola", response.data)
+        const show = response.data;
+        //output.innerHTML = show;
+        const img = document.createElement("img");
+        img.src = show;
+        output.appendChild(img);
     }
-
 
     return(
         <div className="Picture">
