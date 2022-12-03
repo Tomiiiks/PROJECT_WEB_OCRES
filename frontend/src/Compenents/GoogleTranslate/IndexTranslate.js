@@ -13,8 +13,10 @@ export const IndexTranslate = () => {
     const [inputLanguage, setInputLanguage] = useState('English')
     const [outputLanguage, setOutputLanguage] = useState('French')
     const [languages, setLanguages] = useState(null)
+    const [textToTranslate, setTextToTranslate] = useState('')
+    const [translatedText, setTranslatedText] = useState('')
 
-    const getLanguages = () =>{
+    const getLanguages = () => {
 
         const options = {
             method: 'GET',
@@ -28,74 +30,96 @@ export const IndexTranslate = () => {
 
         axios.request(options).then(function (response) {
             console.log(response.data)
-           const arrayOfData = Object.keys(response.data.data).map(key => response.data.data[key])
+            const arrayOfData = Object.keys(response.data.data).map(key => response.data.data[key])
             setLanguages(arrayOfData)
         }).catch(function (error) {
             console.error(error)
-        })}
-
-const translate = () => {
-
-    fetch("http://localhost:3001/translate")
-        .then(response => response.json())
-        .then(translate => {
-            // this.setState({post: airports})
-         console.table("ici",translate[0].translations[0].text)
         })
-        .catch(err => console.log(err));
-}
-    //console.log('languages', languages)
-
-    useEffect(() => {
-        getLanguages()
-    },[])
-
-    //ici
-
-    //ici
-
-
-
-    const handleClick = () => {
-        setInputLanguage(outputLanguage)
-        setOutputLanguage(inputLanguage)
     }
 
-    return (
-        <section className="index-Translate" id="index-Translate">
-            <container>
-                <div>
-                    {!showModal &&<>
-                    <TextBox
-                        style='input'
-                        selectedLanguage={inputLanguage}
-                        setShowModal={setShowModal}
-                        //setTextToTranslate={setTextToTranslate}
-                        //textToTranslate={textToTranslate}
-                        //setTranslatedText={setTranslatedText}
-                    />
-                    <div className="arrow-container" onClick={handleClick}>
-                        <Arrow/>
-                    </div>
-                    <TextBox
-                        style='output'
-                        setShowModal={setShowModal}
-                        selectedLanguage={outputLanguage}
-                        //translatedText={translatedText}
+    const translate = async() => {
 
-                    />
-                        <div id="btn" className="button-container" onClick={translate}>
-                            <Button2 />
+        //const textToTranslate = document.getElementById('input').textContent;
+
+         const  textToTranslate = "hello how are you";
+         //     console.log(document.getElementById('input').value);
+         console.log(textToTranslate);
+
+         await axios.post('http://localhost:3001/translation', {
+             textToTranslate
+         }).then((response) => {
+             console.log(response.data)
+             setTranslatedText(response.data)
+         }).catch((error) => {
+             console.log(error)
+         })
+     }
+
+
+        //{data: [{text: `${textToTranslate}`}]}
+        /*fetch("http://localhost:3001/translate",)
+            .then(response => response.json())
+            .then(translate => {
+             console.log("ici",translate[0].translations[0].text)
+            })
+            .catch(err => console.log(err));
+
+    }
+        //console.log('languages', languages)
+
+        useEffect(() => {
+            getLanguages()
+        },[])
+
+        //ici
+
+        //ici
+    */
+
+
+        const handleClick = () => {
+            setInputLanguage(outputLanguage)
+            setOutputLanguage(inputLanguage)
+        }
+
+            return (
+                <section className="index-Translate" id="index-Translate">
+                    <container>
+                        <div>
+                            {!showModal && <>
+                                <TextBox
+                                    id={'input'}
+                                    style='input'
+                                    selectedLanguage={inputLanguage}
+                                    setShowModal={setShowModal}
+                                    setTextToTranslate={setTextToTranslate}
+                                    //textToTranslate={textToTranslate}
+                                    //setTranslatedText={setTranslatedText}
+                                />
+                                <div className="arrow-container" onClick={handleClick}>
+                                    <Arrow/>
+                                </div>
+                                <TextBox
+                                    style='output'
+                                    setShowModal={setShowModal}
+                                    selectedLanguage={outputLanguage}
+                                    //translatedText={translatedText}
+
+                                />
+                                <div id="btn" className="button-container" onClick={translate}>
+                                    <Button2/>
+                                </div>
+                            </>}
+                            {showModal && (<Modal setShowModal={setShowModal}
+                                                  languages={languages}
+                                                  choseLanguage={showModal === 'input' ? inputLanguage : outputLanguage}
+                                                  setChosenLanguage={showModal === 'input' ? setInputLanguage : setOutputLanguage}
+                            />)}
+
                         </div>
-               </> }
-                    {showModal && (<Modal setShowModal={setShowModal}
-                    languages={languages}
-                    choseLanguage={showModal ==='input' ? inputLanguage : outputLanguage}
-                    setChosenLanguage={showModal==='input' ? setInputLanguage : setOutputLanguage}
-                    />)}
+                    </container>
+                </section>
+            )
 
-                </div>
-            </container>
-        </section>
-    )
+
 }

@@ -1,5 +1,5 @@
 import "./Pictures.css"
-import Button from "../Button";
+import Button from "../Utils/Button";
 import axios from "axios";
 import {useState} from "react";
 
