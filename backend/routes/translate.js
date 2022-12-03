@@ -3,10 +3,12 @@ const axios = require('axios');
 
 var router = express.Router();
 
-const textToTranslate = "Hello World";
 
 router.get('/translate', async (req,res) => {
 
+    const {textToTranslate}= req.query;
+    //console.log("Je suis la ",textToTranslate)
+    //const textToTranslate =  "Hello";
 
     const options = {
         method: 'POST',
@@ -23,6 +25,7 @@ router.get('/translate', async (req,res) => {
             'X-RapidAPI-Host': 'microsoft-translator-text.p.rapidapi.com'
         },
         data: [{text: `${textToTranslate}`}]
+        //data: [{text: `${textToTranslate}`}] //a utiliser en guillemet
     };
 
     axios.request(options).then(function (response) {

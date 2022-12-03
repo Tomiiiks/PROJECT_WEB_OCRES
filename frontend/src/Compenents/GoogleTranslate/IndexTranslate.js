@@ -38,26 +38,26 @@ export const IndexTranslate = () => {
     }
 
     const translate = async() => {
-
+/*
         //const textToTranslate = document.getElementById('input').textContent;
 
-         const  textToTranslate = "hello how are you";
+
+
          //     console.log(document.getElementById('input').value);
          console.log(textToTranslate);
 
-         await axios.post('http://localhost:3001/translation', {
-             textToTranslate
-         }).then((response) => {
-             console.log(response.data)
+         await axios.post('http://localhost:3001/translation', {textToTranslate}
+         ).then((response) => {
+             console.log("heho",response.data)
              setTranslatedText(response.data)
          }).catch((error) => {
              console.log(error)
          })
-     }
+     }*/
 
 
         //{data: [{text: `${textToTranslate}`}]}
-        /*fetch("http://localhost:3001/translate",)
+        const response = fetch("http://localhost:3001/translate",)
             .then(response => response.json())
             .then(translate => {
              console.log("ici",translate[0].translations[0].text)
@@ -68,13 +68,13 @@ export const IndexTranslate = () => {
         //console.log('languages', languages)
 
         useEffect(() => {
-            getLanguages()
+            //getLanguages()
         },[])
 
         //ici
 
         //ici
-    */
+
 
 
         const handleClick = () => {
@@ -92,7 +92,7 @@ export const IndexTranslate = () => {
                                     style='input'
                                     selectedLanguage={inputLanguage}
                                     setShowModal={setShowModal}
-                                    setTextToTranslate={setTextToTranslate}
+                                    onChange={(e) => setTextToTranslate(e.target.value)}
                                     //textToTranslate={textToTranslate}
                                     //setTranslatedText={setTranslatedText}
                                 />
@@ -103,7 +103,7 @@ export const IndexTranslate = () => {
                                     style='output'
                                     setShowModal={setShowModal}
                                     selectedLanguage={outputLanguage}
-                                    //translatedText={translatedText}
+                                    value={translatedText}
 
                                 />
                                 <div id="btn" className="button-container" onClick={translate}>
