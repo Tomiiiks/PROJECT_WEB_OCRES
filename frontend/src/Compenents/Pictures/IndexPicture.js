@@ -1,5 +1,5 @@
 import "./Pictures.css"
-import Button from "../Button";
+import Button from "../Utils/Button";
 
 
 
@@ -12,7 +12,7 @@ export const IndexPicture = () => {
             .then(response => response.json())
             .then(show => {
                 // this.setState({post: airports})
-                console.table("ici",show.value[0].url )
+                console.table("ici", show.value[0].url)
             })
             .catch(err => console.log(err));
     }
@@ -29,8 +29,8 @@ export const IndexPicture = () => {
                 //output.innerHTML = show.value[0].url
 
                 //output.textContent= `${show.value[0].url}`
-                const img= document.createElement("img");
-                img.src= `${show.value[0].url}`
+                const img = document.createElement("img");
+                img.src = `${show.value[0].url}`
                 output.appendChild(img);
             })
 
@@ -38,12 +38,12 @@ export const IndexPicture = () => {
     }
 
 
-    return(
+    return (
         <div className="Picture">
             <h1>IndexPicture</h1>
 
             <div className="button-container" onClick={print} >
-                <Button id="btn" _class="bt Medium" name="GO"  />
+                <Button id="btn" _class="bt Medium" name="GO" />
             </div>
             <div id="output" className="Picture__container">
 

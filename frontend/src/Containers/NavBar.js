@@ -1,10 +1,9 @@
 import React from "react";
-import TextInput from "../Compenents/TextInput"
+import { useState, useEffect } from "react";
 import './navBar.css'
-import '../Compenents/Button.css'
-import '../Compenents/TextInput'
+import '../Compenents/Utils/Button.css'
+import '../Compenents/Utils/TextInput.css'
 import { Container, Row, Col, Alert } from "react-bootstrap";
-import Button from "../Compenents/Button";
 
 export default class NavBar extends React.Component {
 
@@ -16,10 +15,6 @@ export default class NavBar extends React.Component {
             from: null
         }
     };
-
-    display() {
-        alert(this.ou, this.de);
-    }
 
 
     handleSubmit(event) {
@@ -33,6 +28,22 @@ export default class NavBar extends React.Component {
 
     }
 
+    filterFunction() {
+        var input, filter, ul, li, a, i, div, txtValue;
+        input = document.getElementById("where");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("dropinfo");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+
     render() {
         return (
             <Container>
@@ -41,7 +52,10 @@ export default class NavBar extends React.Component {
                         <nav class="Forme Navcont">
                             <h2 class="h2p">TravelGO</h2>
                             <form class="Navcont" onSubmit={this.handleSubmit}>
-                                <input placeholder="Où aller ?" type="search" id="where" name="where"></input>
+
+                                <input placeholder="Où aller ?" type="search" id="where" name="where" onkeyup={this.filterFunction} ></input>
+                                <div id="dropinfo"><a></a> <a></a></div>
+
                                 <input placeholder="De ou ?" type="search" id="from" name="from"></input>
                                 <button class="bt Medium" type=" submit" >GO</button>
                             </form>
