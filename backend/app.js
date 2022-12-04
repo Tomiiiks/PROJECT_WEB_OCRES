@@ -10,6 +10,17 @@ var usersRouter = require("./routes/users");
 var airportsRouter = require("./routes/airports");
 var translateRouter = require("./routes/translate");
 var pictureRouter = require("./routes/picture");
+var villesRouter = require("./routes/villes");
+
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+const dbName = "WebProject";
+const dbURL = `mongodb://localhost:27017/${dbName}`;
+
+mongoose.connect(dbURL, {
+    useNewUrlParser: true
+});
 
 var app = express();
 
@@ -30,15 +41,16 @@ app.use('/', usersRouter);
 app.use('/', airportsRouter);
 app.use('/', translateRouter);
 app.use('/', pictureRouter);
+app.use('/', villesRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};

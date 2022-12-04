@@ -28,8 +28,8 @@ export default class NavBar extends React.Component {
 
     }
 
-    filterFunction() {
-        var input, filter, ul, li, a, i, div, txtValue;
+    keyUpHandler(event) {
+        /*var input, filter, ul, li, a, i, div, txtValue;
         input = document.getElementById("where");
         filter = input.value.toUpperCase();
         div = document.getElementById("dropinfo");
@@ -41,7 +41,21 @@ export default class NavBar extends React.Component {
             } else {
                 a[i].style.display = "none";
             }
-        }
+        }*/
+        console.log(event.target.value)
+
+        var url = "http://localhost:3001/villes/" + event.target.value;
+        fetch(url)
+            .then(response => response.json())
+            .then(json => {
+                console.log(json);
+
+            })
+            .catch(err => console.log(err));
+    }
+
+    onKeyUpValue(event) {
+        console.log(event.target.value)
     }
 
     render() {
@@ -53,10 +67,10 @@ export default class NavBar extends React.Component {
                             <h2 class="h2p">TravelGO</h2>
                             <form class="Navcont" onSubmit={this.handleSubmit}>
 
-                                <input placeholder="Où aller ?" type="search" id="where" name="where" onkeyup={this.filterFunction} ></input>
+                                <input placeholder="Où aller ?" type="search" id="where" ref="Where" name="where" onKeyUp={this.keyUpHandler.bind(this)} ></input>
                                 <div id="dropinfo"><a></a> <a></a></div>
 
-                                <input placeholder="De ou ?" type="search" id="from" name="from"></input>
+                                <input placeholder="De ou ?" type="search" id="from" ref="from" name="from" onKeyUp={this.onKeyUpValue.bind(this)}></input>
                                 <button class="bt Medium" type=" submit" >GO</button>
                             </form>
                         </nav>
