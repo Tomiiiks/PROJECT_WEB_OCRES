@@ -10,14 +10,23 @@ var usersRouter = require("./routes/users");
 var airportsRouter = require("./routes/airports");
 var translateRouter = require("./routes/translate");
 var pictureRouter = require("./routes/picture");
-var meteoRouter = require("./routes/meteo");
+var villesRouter = require("./routes/villes");
 
-var app = module.exports = express();
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+const dbName = "WebProject";
+const dbURL = `mongodb://localhost:27017/${dbName}`;
+
+mongoose.connect(dbURL, {
+    useNewUrlParser: true
+});
+
+var app = express();
 
 // view engine setup
-module.exports = function(app, express) {
-        app.use(express.static(__dirname + '/public'));
-    }
+app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'views'));
 
 
 app.use(cors());
@@ -28,21 +37,20 @@ app.use(cookieParser());
 app.use(express.static(__dirname + './routes/public'));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', usersRouter);
 app.use('/', airportsRouter);
-app.use('/translate', translateRouter);
-app.use('/picture', pictureRouter);
-app.use('/meteo', meteoRouter);
-
+app.use('/', translateRouter);
+app.use('/', pictureRouter);
+app.use('/', villesRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
