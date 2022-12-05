@@ -1,5 +1,4 @@
 import {Col} from "react-bootstrap";
-import {index, IndexTranslate} from './GoogleTranslate/IndexTranslate';
 
 
 export const WidgetComposition = ({title,description, files}) => {
