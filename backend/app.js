@@ -10,12 +10,14 @@ var usersRouter = require("./routes/users");
 var airportsRouter = require("./routes/airports");
 var translateRouter = require("./routes/translate");
 var pictureRouter = require("./routes/picture");
+var meteoRouter = require("./routes/meteo");
 
-var app = express();
+var app = module.exports = express();
 
 // view engine setup
-app.set('view engine', 'jade');
-app.set('views', path.join(__dirname, 'views'));
+module.exports = function(app, express) {
+        app.use(express.static(__dirname + '/public'));
+    }
 
 
 app.use(cors());
@@ -26,10 +28,12 @@ app.use(cookieParser());
 app.use(express.static(__dirname + './routes/public'));
 
 app.use('/', indexRouter);
-app.use('/', usersRouter);
+app.use('/users', usersRouter);
 app.use('/', airportsRouter);
-app.use('/', translateRouter);
-app.use('/', pictureRouter);
+app.use('/translate', translateRouter);
+app.use('/picture', pictureRouter);
+app.use('/meteo', meteoRouter);
+
 
 
 // catch 404 and forward to error handler

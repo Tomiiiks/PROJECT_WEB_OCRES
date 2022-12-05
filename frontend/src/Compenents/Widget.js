@@ -5,6 +5,7 @@ import {IndexTranslate} from './GoogleTranslate/IndexTranslate';
 import {IndexAirport} from "./Airport/IndexAirport";
 import {IndexConvert} from "./Convert/IndexConvert";
 import {IndexPicture} from "./Pictures/IndexPicture";
+import {IndexMeteo} from "./Meteo/IndexMeteo";
 
 
 export const Widget = () => {
@@ -27,14 +28,19 @@ export const Widget = () => {
 
         },
         {
-            title: "Convertisseur",
-            description: "Convertisseur",
+            title: "",
+            description: "",
             files: <IndexConvert />,
         },
         {
             title: "Pic",
             description: "",
             files: <IndexPicture/>,
+        },
+        {
+            title: "",
+            description: "",
+            files: <IndexMeteo/>,
         }
     ];
 
