@@ -8,6 +8,33 @@
     padding: 20px;
     background-color: #EFF0F6;
 }
+
+
+
 .conversion{
     background-color: #FFDF9A;
 }
+
+.exchange-rate__container{
+    border : 1px solid #14142B;
+    border-radius: 10px;
+}
+
+.conversion{
+    padding: 2px;
+    margin: 2px;
+    text-align: center;
+}
+.exchange-rate{
+    background-color: #FFE6B0;
+    padding: 2px;
+    margin: 2px;
+    margin-top: 1px;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 0.3);
+}
+
+button:hover{
+    background-color: rebeccapurple;
+}
+
+

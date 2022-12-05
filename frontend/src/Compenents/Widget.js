@@ -1,4 +1,4 @@
-import {Col, Container, Nav, Row, Tab} from "react-bootstrap";
+import {Col, Container, Row, Tab} from "react-bootstrap";
 import {WidgetComposition} from "./WidgetComposition";
 import './Widget.css';
 import {IndexTranslate} from './GoogleTranslate/IndexTranslate';
