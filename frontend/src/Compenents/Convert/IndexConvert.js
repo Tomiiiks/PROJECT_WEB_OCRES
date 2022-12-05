@@ -26,23 +26,20 @@ export const IndexConvert = () => {
     const convert = () => {
         const options = {
             method: 'GET',
-            url: 'https://currency-conversion-and-exchange-rates.p.rapidapi.com/convert',
+            url: 'http://localhost:3001/currency',
             params: {from: chosenPrimaryCurrency, to: chosenSecondaryCurrency, amount: '1'},
-            headers: {
-                'X-RapidAPI-Key': '9e11b0b296msh7d97c87936fd571p1d249fjsn8414fe1b3715',
-                'X-RapidAPI-Host': 'currency-conversion-and-exchange-rates.p.rapidapi.com'
-            }
+
         };
 
         axios.request(options).then(function (response) {
-            console.log(response.data.info.rate)
+            console.log(response.data)
             //setExchangeRate(response.data.info.rate)
             console.log(response.data.result)
-            setResult(response.data.info.rate * amount)
+            setResult(response.data * amount)
             setExchangedData({
                 primaryCurrency: chosenPrimaryCurrency,
                 secondaryCurrency: chosenSecondaryCurrency,
-                exchangeRate: response.data.info.rate
+                exchangeRate: response.data
             })
         }).catch(function (error) {
             console.error(error)
