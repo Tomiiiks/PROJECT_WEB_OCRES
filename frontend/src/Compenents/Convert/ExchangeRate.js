@@ -1,9 +1,13 @@
-const ExchangeRate = ({exchangeRate,chosenPrimaryCurrency,chosenSecondCurrency}) => {
+import "./Conversion.css"
+
+const ExchangeRate = ({exchangedData}) => {
     return (
         <div className="exchange-rate">
             <h4>Exchange Rate</h4>
-            <h2>{exchangeRate}</h2>
-            <p>{chosenPrimaryCurrency} to {chosenSecondCurrency}</p>
+            <div className="exchange-rate__container">
+            <h2>{exchangedData.exchangeRate}</h2>
+            </div>
+            <p>{exchangedData.primaryCurrency} to {exchangedData.secondaryCurrency}</p>
         </div>
     );
 }

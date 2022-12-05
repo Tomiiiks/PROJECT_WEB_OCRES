@@ -16,11 +16,10 @@ export const IndexConvert = () => {
     const [amount, setAmount] = useState(1);
     //const [exchangeRate, setExchangeRate] = useState(0);
     const [result, setResult] = useState(0);
-
     const [exchangedData, setExchangedData] = useState({
         primaryCurrency: 'USD',
         secondaryCurrency: 'USD',
-        ExchangeRate: 0
+        exchangeRate: 0
     });
     console.log(chosenPrimaryCurrency, chosenSecondaryCurrency, amount);
 
@@ -43,14 +42,13 @@ export const IndexConvert = () => {
             setExchangedData({
                 primaryCurrency: chosenPrimaryCurrency,
                 secondaryCurrency: chosenSecondaryCurrency,
-                ExchangeRate: response.data.info.rate
+                exchangeRate: response.data.info.rate
             })
         }).catch(function (error) {
             console.error(error)
         })
     }
 
-    console.log("rate2",exchangeRate)
     return (
 
         <div className="conversion">
@@ -106,12 +104,12 @@ export const IndexConvert = () => {
            </table>
 
 
-            <Button id="btn" _class="bt small" onClick={convert} name="Convert"  />
+            <button id="btn" _class="bt small" onClick={convert} name="Convert"  />
 
         </div>
 
             <ExchangeRate
-            exchangeRate={exchangedRate}
+            exchangedData={exchangedData}
             chosenPrimaryCurrency={chosenPrimaryCurrency}
             chosenSecondaryCurrency={chosenSecondaryCurrency}
             />
