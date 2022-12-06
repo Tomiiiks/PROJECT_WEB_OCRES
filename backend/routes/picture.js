@@ -7,9 +7,10 @@ var pictureRouter = express.Router();
 
 
 
-pictureRouter.get('/picture',    (req,res) => {
+pictureRouter.get('/picture',    async(req,res) => {
     const{printPicture, pageNumber,pageSize} = req.query;
 
+    console.log("printPicture",req)
     //const printPicture = req.query;
     //const printPicture = "Congo";
 
@@ -26,8 +27,8 @@ pictureRouter.get('/picture',    (req,res) => {
     axios.request(options).then(function (response) {
         //res.json(response.data)
         console.log("url",response.data.value[0].url)
-        console.log("titl",response.data.value[0].title)
-        console.log("all",response.data)
+        //console.log("titl",response.data.value[0])
+        //console.log("all",response.data)
        res.json(response.data.value[0].url) //A remettre pour avoir l'url de l'image
     }).catch(function (error) {
         console.error(error);

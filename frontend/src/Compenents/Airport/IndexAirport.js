@@ -1,25 +1,28 @@
 import "./Airport.css"
 import "../Utils/Button.css"
 import Button from "../Utils/Button";
-import { render } from "react-dom";
+import {render} from "react-dom";
+import {useState} from "react";
 
 export const IndexAirport = () => {
+    const [place, setPlace] = useState("");
+
 
     //const tableBody=document.getElementById("table-body");
 
-    const getAirport = () => {
-        fetch("http://localhost:3001/airports")
-            .then(response => response.json())
-            .then(airports => {
-                // this.setState({post: airports})
-                console.log(airports);
-            })
-            .catch(err => console.log(err));
+    const getAirport = ()=>{
+       fetch(`http://localhost:3001/airports/${place}`)
+           .then(response => response.json())
+              .then(airports => {
+                 // this.setState({post: airports})
+                  console.log(airports);
+              })
+           .catch(err => console.log(err));
     }
 
 
 
-    getAirport();
+getAirport();
 
     /*const populateTable = (airports) => {
         for(const airport of airports){
@@ -51,36 +54,38 @@ export const IndexAirport = () => {
                 tableRow.append(tableCell);
             }*/
 
-    //tableBody.append(tableRow);
-    //  }
-    // }
+            //tableBody.append(tableRow);
+      //  }
+   // }
 
 
-    return (
+return(
 
-        <div className="first">
-            <h2>Liste des Aéroports</h2>
-            <p>Cherher votre airport</p>
+    <div className="first">
+        <h2>Liste des Aéroports</h2>
+        <p>Cherher votre airport</p>
 
-            <input />
-            <Button />
-            <div className="second">
-                <table>
-
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th id="Airport_Name">Airport Name</th>
-                            <th id="City">City -</th>
-                            <th id="Country"> Country -</th>
-                            <th id="Airport_Code">Airport Code</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body"></tbody>
-                </table>
-            </div>
+        <input type="text" placeholder="City" onChange={(e) => setPlace(e.target.value)}/>
+        <div className="button-container" onClick={getAirport} >
+            <Button id="btn" _class="bt Medium" name="GO"  />
         </div>
+        <div className="second">
+        <table>
 
-    )
+            <thead>
+                <tr>
+                    <th></th>
+                    <th id="Airport_Name">Airport Name</th>
+                    <th id="City">City -</th>
+                    <th id="Country"> Country -</th>
+                    <th id="Airport_Code">Airport Code</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+        </div>
+    </div>
+
+)
 
 }
