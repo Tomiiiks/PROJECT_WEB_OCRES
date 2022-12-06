@@ -11,6 +11,8 @@ var airportsRouter = require("./routes/airports");
 var translateRouter = require("./routes/translate");
 var pictureRouter = require("./routes/picture");
 var villesRouter = require("./routes/villes");
+var activitersRouter = require("./routes/activiters");
+var meteoRouter = require("./routes/meteo")
 
 const mongoose = require('mongoose');
 
@@ -42,6 +44,8 @@ app.use('/', airportsRouter);
 app.use('/', translateRouter);
 app.use('/', pictureRouter);
 app.use('/', villesRouter);
+app.use('/', activitersRouter);
+app.use('/', meteoRouter);
 
 
 // catch 404 and forward to error handler
