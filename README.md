@@ -36,3 +36,6 @@ Nous avons eu comme problémes la réalisation de google translate mais aussi un
 Voici notre organisation : https://trello.com/b/ojz8jCBQ/tableau-agile
 
 ## Résultat
+
+![image](https://user-images.githubusercontent.com/65348048/205810346-c30e9abe-f91d-47e1-874a-ef72f225897a.png)
+
