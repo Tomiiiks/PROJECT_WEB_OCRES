@@ -6,27 +6,45 @@
   z-index: 999;
   width: 100%;
   display: flex;
-  background-color: teal;
+  background-color: var(--Header-color);
   justify-content: center;
 }
-input{
-  border: 1px solid green;
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: #FFF8E9;
-  font-size: 14px;
-  height: 40px;
-  background-color: transparent;
-  width: 100%;
+
+input[type="search"] {
+  background-color: var(--Header-Weak-color);
+  background-image: url('../../stories/assets/img/CircleActionsPlaceholder.svg');
+  background-position: center left 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  border: none;
+  border-radius: 1em;
+  height: 3.25em;
+
+  caret-color: var(--Line-color);
+  color: var(--BG-color);
+
 }
 
-.output, .input{
+input[type="search"]:focus {
+  border: solid 2px var(--Line-color);
+  background-position: center left 8px;
+  padding-left: 38px;
+  background-color: var(--Header-color);
+}
+
+input[type="search"]::placeholder {
+  color: var(--Line-color);
+}
+
+
+.output,
+.input {
   display: flex;
   flex-direction: column;
-    justify-content: center;
+  justify-content: center;
 }
 
-textarea{
+textarea {
   background-color: transparent;
   color: #FFF8E9;
   border: none;
@@ -38,16 +56,15 @@ textarea{
   overflow: auto;
   margin-top: 10px;
 }
-.output textarea{
+
+.output textarea {
   background-color: green;
   align-items: center;
 }
 
-.input textarea {
+.input textarea {}
 
-}
-
-.select-drop-down input{
+.select-drop-down input {
   padding: 5px 15px;
   color: red;
   font-size: 15px;
@@ -63,33 +80,34 @@ textarea{
 
 }
 
-.arrow-container{
+.arrow-container {
   padding: 15px;
 }
-.arrow-container svg{
+
+.arrow-container svg {
   width: 26px;
   height: 26px;
   fill: red;
 }
 
-.language-list{
+.language-list {
   width: 90%;
   color: #FFF8E9;
 
 }
 
-.search-list{
+.search-list {
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 10px;
 }
+
 .search-list .close-button svg {
 
-  z-index:10;
+  z-index: 10;
   width: 30px;
   height: 30px;
   padding: 20px;
   fill: #6E7191;
 }
-

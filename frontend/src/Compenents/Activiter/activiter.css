@@ -4,4 +4,6 @@
     background-color: var(--Header-color);
     border-radius: 2em;
     color: var(--BG-color);
+    padding: 1em;
+    height: 36em;
 }

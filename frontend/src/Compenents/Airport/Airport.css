@@ -4,7 +4,9 @@ section .first {
     height: auto;
     color: var(--BG-color);
     align-items: center;
-
+    border-radius: 2em;
+    padding: 1em;
+    height: 36em;
 
 }
 

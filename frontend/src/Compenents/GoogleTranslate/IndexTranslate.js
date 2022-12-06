@@ -4,7 +4,7 @@ import Button2 from "./button2";
 
 import Modal from "./Modal";
 import "./Translate.css";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import axios from 'axios'
 import data from "bootstrap/js/src/dom/data";
 
@@ -55,77 +55,77 @@ export const IndexTranslate = () => {
                 profanityAction: 'NoAction',
                 textType: 'plain'
             },
-            data: [{text: `${textToTranslate}`}]
+            data: [{ text: `${textToTranslate}` }]
         };
         axios.request(options).catch((error) => {
-             console.log(error)
-         })
-     }
+            console.log(error)
+        })
+    }
 
 
-        /*//{data: [{text: `${textToTranslate}`}]}
-        const response = fetch("http://localhost:3001/translate",)
-            .then(response => response.json())
-            .then(translate => {
-             console.log("ici",translate[0].translations[0].text)
-            })
-            .catch(err => console.log(err));/
-    }*/
-        //console.log('languages', languages)
+    /*//{data: [{text: `${textToTranslate}`}]}
+    const response = fetch("http://localhost:3001/translate",)
+        .then(response => response.json())
+        .then(translate => {
+         console.log("ici",translate[0].translations[0].text)
+        })
+        .catch(err => console.log(err));/
+}*/
+    //console.log('languages', languages)
 
-        useEffect(() => {
-            //getLanguages()
-        },[])
+    useEffect(() => {
+        //getLanguages()
+    }, [])
 
-        //ici
+    //ici
 
-        //ici
+    //ici
 
 
 
-        const handleClick = () => {
-            setInputLanguage(outputLanguage)
-            setOutputLanguage(inputLanguage)
-        }
+    const handleClick = () => {
+        setInputLanguage(outputLanguage)
+        setOutputLanguage(inputLanguage)
+    }
 
-            return (
-                <section className="index-Translate" id="index-Translate">
-                    <container>
-                        <div>
-                            {!showModal && <>
-                                <TextBox
-                                    id={'input'}
-                                    style='input'
-                                    selectedLanguage={inputLanguage}
-                                    setShowModal={setShowModal}
-                                    onChange={(e) => setTextToTranslate(e.target.value)}
-                                    //textToTranslate={textToTranslate}
-                                    //setTranslatedText={setTranslatedText}
-                                />
-                                <div className="arrow-container" onClick={handleClick}>
-                                    <Arrow/>
-                                </div>
-                                <TextBox
-                                    style='output'
-                                    setShowModal={setShowModal}
-                                    selectedLanguage={outputLanguage}
-                                    value={translatedText}
-
-                                />
-                                <div id="btn" className="button-container" onClick={translate}>
-                                    <Button2/>
-                                </div>
-                            </>}
-                            {showModal && (<Modal setShowModal={setShowModal}
-                                                  languages={languages}
-                                                  choseLanguage={showModal === 'input' ? inputLanguage : outputLanguage}
-                                                  setChosenLanguage={showModal === 'input' ? setInputLanguage : setOutputLanguage}
-                            />)}
-
+    return (
+        <section className="index-Translate" id="index-Translate">
+            <container>
+                <div>
+                    {!showModal && <>
+                        <TextBox
+                            id={'input'}
+                            style='input'
+                            selectedLanguage={inputLanguage}
+                            setShowModal={setShowModal}
+                            onChange={(e) => setTextToTranslate(e.target.value)}
+                        //textToTranslate={textToTranslate}
+                        //setTranslatedText={setTranslatedText}
+                        />
+                        <div className="arrow-container" onClick={handleClick}>
+                            <Arrow />
                         </div>
-                    </container>
-                </section>
-            )
+                        <TextBox
+                            style='output'
+                            setShowModal={setShowModal}
+                            selectedLanguage={outputLanguage}
+                            value={translatedText}
+
+                        />
+                        <div id="btn" className="button-container" onClick={translate}>
+                            <button className="bt Medium">GO</button>
+                        </div>
+                    </>}
+                    {showModal && (<Modal setShowModal={setShowModal}
+                        languages={languages}
+                        choseLanguage={showModal === 'input' ? inputLanguage : outputLanguage}
+                        setChosenLanguage={showModal === 'input' ? setInputLanguage : setOutputLanguage}
+                    />)}
+
+                </div>
+            </container>
+        </section>
+    )
 
 
 }

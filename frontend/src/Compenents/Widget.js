@@ -18,12 +18,6 @@ export const Widget = () => {
             files: <IndexTranslate />,
         },
         {
-            title: "Meteo",
-            description: "Meteo",
-            files: "",
-
-        },
-        {
             title: "",
             description: "",
             files: <IndexAirport />,

@@ -11,7 +11,7 @@ input[type="text"] {
 
     caret-color: var(--Line-color);
     color: var(--BG-color);
-    margin: 0.5rem;
+
 }
 
 input[type="search"]:focus,

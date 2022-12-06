@@ -115,7 +115,7 @@ function NavBar({ navigation }) {
                     </Col>
                 </Row>
             </Container >
-            <Widget navigation={navigation} />
+
         </div>
     );
 }

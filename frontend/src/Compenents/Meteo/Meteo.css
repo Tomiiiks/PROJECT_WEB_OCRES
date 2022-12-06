@@ -3,6 +3,7 @@
     color: var(--BG-color);
     border-radius: 2em;
     padding: 1em;
+    height: 36em;
 }
 
 .meteo-container {

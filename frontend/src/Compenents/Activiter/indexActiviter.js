@@ -6,7 +6,7 @@ export const IndexActiviter = () => {
     //const tableBody=document.getElementById("table-body");
 
     const getActiviter = () => {
-        fetch("http://localhost:3001/activiter/France")
+        fetch("http://localhost:3001/activiters/France")
             .then(response => response.json())
             .then(json => {
                 console.log(json[0].pays);

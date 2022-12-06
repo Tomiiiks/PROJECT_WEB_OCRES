@@ -13,6 +13,8 @@
 
 .conversion {
     background-color: var(--Header-color);
+    padding: 1em;
+    height: 36em;
 }
 
 .exchange-rate__container {
