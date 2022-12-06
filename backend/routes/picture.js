@@ -2,14 +2,14 @@ var express = require("express");
 const axios = require('axios');
 const {response} = require("express");
 
-var router = express.Router();
+var pictureRouter = express.Router();
 
 
 
 
-
-router.get('/picture',   async (req,res) => {
+pictureRouter.get('/picture',    (req,res) => {
     const{printPicture, pageNumber,pageSize} = req.query;
+
     //const printPicture = req.query;
     //const printPicture = "Congo";
 
@@ -25,9 +25,12 @@ router.get('/picture',   async (req,res) => {
 
     axios.request(options).then(function (response) {
         //res.json(response.data)
-        res.json(response.data.value[0].url) //A remettre pour avoir l'url de l'image
+        console.log("url",response.data.value[0].url)
+        console.log("titl",response.data.value[0].title)
+        console.log("all",response.data)
+       res.json(response.data.value[0].url) //A remettre pour avoir l'url de l'image
     }).catch(function (error) {
         console.error(error);
     });
 });
-    module.exports = router;
+    module.exports = pictureRouter;

@@ -1,5 +1,4 @@
 import "./Conversion.css"
-//import ExchangeRate from "./ExchangeRate";
 import { useState } from "react";
 import axios from 'axios'
 import ExchangeRate from "./ExchangeRate";
@@ -100,8 +99,9 @@ export const IndexConvert = () => {
                </tbody>
            </table>
 
-
-            <button id="btn" _class="bt small" onClick={convert} name="Convert"  />
+           <div className="button-container" onClick={convert}>
+            <Button id="btn" _class="bt small"  name="Convert"  />
+           </div>
 
         </div>
 

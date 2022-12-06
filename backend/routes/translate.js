@@ -1,14 +1,15 @@
 var express = require("express");
 const axios = require('axios');
+const {response} = require("express");
 
-var router = express.Router();
+var translateRouter = express.Router();
 
+const textToTranslate = "";
+translateRouter.get(`/translate/:${textToTranslate}`,  (req,res) => {
 
-router.post('/translate', async (req,res) => {
+    //const {textToTranslate}= req.query;
+    console.log("Je suis la ",req)
 
-    const {textToTranslate}= req.query;
-    //console.log("Je suis la ",textToTranslate)
-    //const textToTranslate =  "Hello";
 
     const options = {
         method: 'POST',
@@ -24,15 +25,18 @@ router.post('/translate', async (req,res) => {
             'X-RapidAPI-Key': '9e11b0b296msh7d97c87936fd571p1d249fjsn8414fe1b3715',
             'X-RapidAPI-Host': 'microsoft-translator-text.p.rapidapi.com'
         },
-        data: {text: textToTranslate}
+        data: [{text: `${textToTranslate}`}]
+
+        //data: {text: textToTranslate}
         //data: [{text: `${textToTranslate}`}] //a utiliser en guillemet
     };
 
-    axios.request(options).then(function (response) {
+    axios.request(options).then((response)=> {
         console.log("ici", response.data);
         res.json(response.data)
-    }).catch(function (error) {
+    }).catch((error)=> {
         console.error(error);
+        return response.data
     });
 });
-module.exports = router;
+module.exports = translateRouter;

@@ -3,6 +3,10 @@
     color: #14142B;
 }
 
+input{
+    padding: 2px;
+}
+
 
 .Picture__container{
     display: flex;

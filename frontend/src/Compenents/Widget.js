@@ -33,7 +33,7 @@ export const Widget = () => {
             files: <IndexConvert />,
         },
         {
-            title: "Pic",
+            title: "",
             description: "",
             files: <IndexPicture/>,
         },

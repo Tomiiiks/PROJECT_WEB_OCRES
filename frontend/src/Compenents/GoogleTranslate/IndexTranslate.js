@@ -20,7 +20,7 @@ export const IndexTranslate = () => {
 
         const options = {
             method: 'GET',
-            url: 'https://google-translate1.p.rapidapi.com/language/translate/v2/languages',
+            //url: 'https://google-translate1.p.rapidapi.com/language/translate1/v2/languages',
             headers: {
                 'Accept-Encoding': 'application/gzip',
                 'X-RapidAPI-Key': 'e1b79b871bmshe59236e1e317826p12afbejsnae344e015a94',
@@ -37,22 +37,27 @@ export const IndexTranslate = () => {
         })
     }
 
-    const translate = async() => {
+    const translate = () => {
 
         //const textToTranslate = document.getElementById('input').textContent;
+        //console.log(document.getElementById('input').value);
 
-
-
-         //     console.log(document.getElementById('input').value);
-         const textToTranslate = "Hello";
+        const textToTranslate = "hello";
         console.log(textToTranslate);
 
 
-        await axios.post('http://localhost:3001/translation', textToTranslate
-         ).then((response) => {
-             console.log("heho",response.data)
-             setTranslatedText(response.data)
-         }).catch((error) => {
+        const options = {
+            method: 'POST',
+            url: `http://localhost:3001/translate/:${textToTranslate}`,
+            params: {
+                'to[0]': 'fr',
+                'api-version': '3.0',
+                profanityAction: 'NoAction',
+                textType: 'plain'
+            },
+            data: [{text: `${textToTranslate}`}]
+        };
+        axios.request(options).catch((error) => {
              console.log(error)
          })
      }
