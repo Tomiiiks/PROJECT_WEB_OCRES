@@ -25,7 +25,7 @@ Notre dashboard propose de nombreux contenus et vise les voyageurs ayant besoin 
 
 Voici notre prototype Figma réalisés avant le projet 
 
-Tomiiiks/PROJECT_WEB_OCRES/Mock up.pdf
+Tomiiiks/PROJECT_WEB_OCRES/Mock_up.pdf
 
 ## Difficultés
 
