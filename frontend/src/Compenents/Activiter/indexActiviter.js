@@ -27,6 +27,7 @@ export const IndexActiviter = () => {
 
         <div className="activiter" onClick={getActiviter}>
             <div id="activiter">
+                <h2>Activiter</h2>
                 <h3 id="imgLegende"></h3>
                 <img id="activiterimg"></img>
             </div>
