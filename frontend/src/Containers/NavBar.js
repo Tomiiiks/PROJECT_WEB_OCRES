@@ -1,27 +1,22 @@
 import React, { useState } from "react";
+import { Widget } from "../Compenents/Widget";
 import './navBar.css'
 import '../Compenents/Utils/Button.css'
 import '../Compenents/Utils/TextInput.css'
 import { Container, Row, Col, } from "react-bootstrap";
 
 
-function NavBar({ name = "Hooks" }) {
+function NavBar({ navigation }) {
 
-    const [arriver, setArriver] = useState("")
-    const [depart, setDepart] = useState("")
 
     function handleSubmit(event) {
         event.preventDefault();
         const data = new FormData(event.target);
 
-        console.log(data.get('where'));
-        console.log(data.get('from'));
-
         const arriv = data.get('where');
-        setArriver(arriv);
+        navigation.setStateArr(arriv);
         const dep = data.get('from');
-        setDepart(dep);
-
+        navigation.setStateDep(dep);
     }
 
 
@@ -99,26 +94,29 @@ function NavBar({ name = "Hooks" }) {
 
 
     return (
-        <Container>
-            <Row>
-                <Col size={12}>
-                    <nav className="Forme Navcont">
-                        <h2 className="h2p">TravelGO</h2>
-                        <form className="Navcont" onSubmit={handleSubmit}>
-                            <div id="autocomplete" className="autocomplete">
-                                <input placeholder="Où aller ?" type="search" id="where" name="where" autoComplete="off" onClick={handleClick("where", "autocomplete")}></input >
-                            </div>
+        <div>
+            <Container>
+                <Row>
+                    <Col size={12}>
+                        <nav className="Forme Navcont">
+                            <h2 className="h2p">TravelGO</h2>
+                            <form className="Navcont" onSubmit={handleSubmit}>
+                                <div id="autocomplete" className="autocomplete">
+                                    <input placeholder="Où aller ?" type="search" id="where" name="where" autoComplete="off" onclick={handleClick("where", "autocomplete")}></input >
+                                </div>
 
-                            <div id="dropinfo" className="dropinfo">
-                                <input placeholder="De ou ?" type="search" id="from" name="from" autoComplete="off" onClick={handleClick("from", "dropinfo")}></input>
-                            </div>
+                                <div id="dropinfo" className="dropinfo">
+                                    <input placeholder="De ou ?" type="search" id="from" name="from" autoComplete="off" onClick={handleClick("from", "dropinfo")}></input>
+                                </div>
 
-                            <button className="bt Medium" type=" submit" >GO</button>
-                        </form>
-                    </nav>
-                </Col>
-            </Row>
-        </Container >
+                                <button className="bt Medium" type=" submit" >GO</button>
+                            </form>
+                        </nav>
+                    </Col>
+                </Row>
+            </Container >
+            <Widget navigation={navigation} />
+        </div>
     );
 }
 
