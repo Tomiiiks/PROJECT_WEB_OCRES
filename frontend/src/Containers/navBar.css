@@ -22,9 +22,6 @@
     margin-bottom: auto;
 }
 
-.dropinfo {
-    width: 50%;
-}
 
 @media only screen and (max-width: 600px) {
     .Navcont {
@@ -34,4 +31,65 @@
         align-content: center;
         padding: 1rem;
     }
+
+    .autocomplete,
+    .dropinfo {
+        /*the container must be positioned relative:*/
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        display: unset;
+    }
+}
+
+
+
+.autocomplete,
+.dropinfo {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    display: unset;
+}
+
+.autocomplete-items,
+.dropinfo-items {
+    display: unset;
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    border-radius: 1em;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 98%;
+    left: 0;
+    right: 0;
+
+}
+
+.autocomplete-items div,
+.dropinfo-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: var(--Header-Weak-color);
+    border-bottom: 1px solid #d4d4d4;
+    box-sizing: border-box;
+    color: var(--BG-color);
+}
+
+.autocomplete-items div:hover,
+.dropinfo-items div:hover {
+    /*when hovering an item:*/
+    background-color: var(--Header-color);
+    box-sizing: border-box;
+}
+
+.autocomplete-active,
+.dropinfo-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+    box-sizing: border-box;
 }
