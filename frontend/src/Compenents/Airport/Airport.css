@@ -1,7 +1,7 @@
 section .first {
     background-color: var(--Header-color);
     justify-content: center;
-    height: 90vh;
+    height: auto;
     color: var(--BG-color);
     align-items: center;
 
