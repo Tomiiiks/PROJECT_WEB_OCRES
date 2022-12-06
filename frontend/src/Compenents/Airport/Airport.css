@@ -1,8 +1,8 @@
 section .first {
-    background-color: rgb(251, 199, 127);
+    background-color: var(--Header-color);
     justify-content: center;
     height: 90vh;
-    color: #EFF0F6;
+    color: var(--BG-color);
     align-items: center;
 
 
