@@ -25,3 +25,14 @@ Notre dashboard propose de nombreux contenus et vise les voyageurs ayant besoin 
 
 Voici notre prototype Figma réalisés avant le projet 
 
+Tomiiiks/PROJECT_WEB_OCRES/Mock up.pdf
+
+## Difficultés
+
+Nous avons eu comme problémes la réalisation de google translate mais aussi une API qui a crash. De plus la gestion de la BDD a été compliqué.
+
+## Trello
+
+Voici notre organisation : https://trello.com/b/ojz8jCBQ/tableau-agile
+
+## Résultat
