@@ -1,22 +1,27 @@
 # Projet de fin de semestre
 
-A lire impérativement avant de commencer quoi que ce soit, ce sont les règles que vous devrez appliquer tout au long du semestre:
-
-<p align="center">
- <a href="https://gitlab.com/Adrien_Kourganoff/instructions_web_ocres_ing4/-/blob/master/README.md">Règles pour le semestre</a>
-</p>
+Ce README présente les membres de l'équipe projet, le mock-up Figma ,la description du projet réalisé, la documentation permettant le lancement du projet, les quelques difficultés rencontrées, le lien de notre Trello permettant la répartition du travail et une démonstration du projet :
 
 ## Introduction
 
-Ce repo git contient deux repertoires. L'un concerne la partie backend et l'autre la partie frontend.
+Notre projet Travel GO est une interface regroupant les informations d'un voyageur.
+La traduction, convertisseur de monnaie, météo, des photos et une liste d'activités.
+Ce projet de Front-end et backend a été réalisé par 2 étudiant de l'ECE, Alexandre et Tom.
+Ils sont devenues de réel dev fullstack grâce à ce projet.
 
-Les deux repertoires ont été initialisé pour vous aider à démarrer le projet dans les meilleures conditions.
+## Fonctionnalités
 
-Chacun de ces repertoires contient un README.md qui vous pouvez vous approprier. Nous vous encourageons à le faire en y mettant toute les informations nécessaires à la compréhension de votre projet
+Notre projet est un dashboard regroupant 6 widgets différents:
 
-## Instructions
+- Un indicateur de méteo permettant de visualiser la méteo d'une ville en direct; Paris par défaut. 
+- Un Convertisseur de monnaie permettant de convertir une somme d'argent en une autre monnaie. + son taux de change.
+- Un indicateur de traduction permettant de traduire un texte en une autre langue.
+- Un indicateur de photos permettant de visualiser des photos d'une ville. 
+- Un indicateur de liste d'activités permettant de visualiser des activités d'une ville.
+- Un indicateur de aéroports et de gares dans une ville 
+Notre dashboard propose de nombreux contenus et vise les voyageurs ayant besoin de données en temps réel : les statistiques du Covid-19 peuvent influencer l'ensemble des autres widgets : un confinement pourrait changer le cours des actions ou la météo par exemple. De même, cette pandémie revient très souvent aux informations nationales et pourrait nécessiter une surveillance accrue des derniers articles parus.
 
-Les instructions sont à retrouver dans le pdf instruction.pdf.
+## Mock-up Figma
 
-**Le non respect de ces instructions entraînera des pertes de points alors prenez le temps de tout lire et de poser des questions si vous ne comprenez pas**
+Voici notre prototype Figma réalisés avant le projet 
 
