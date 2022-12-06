@@ -4,10 +4,10 @@ const axios = require('axios');
 
 var router = express.Router();
 
-const place = "Lyon";
+
 
 router.get('/airports', function (req,res,next)  {
-
+        const place = req.query;
         const options = {
             method: 'GET',
             url: `https://world-airports-directory.p.rapidapi.com/v1/airports/${place}`,
