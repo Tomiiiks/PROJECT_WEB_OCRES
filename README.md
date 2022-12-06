@@ -1,6 +1,6 @@
 # Projet de fin de semestre
 
-Ce README présente les membres de l'équipe projet, le mock-up Figma ,la description du projet réalisé, la documentation permettant le lancement du projet, les quelques difficultés rencontrées, le lien de notre Trello permettant la répartition du travail et une démonstration du projet :
+Ce README présente les membres de l'équipe projet, le mock-up Figma ,la description du projet réalisé, les quelques difficultés rencontrées, le lien de notre Trello permettant la répartition du travail  :
 
 ## Introduction
 
@@ -24,4 +24,17 @@ Notre dashboard propose de nombreux contenus et vise les voyageurs ayant besoin 
 ## Mock-up Figma
 
 Voici notre prototype Figma réalisés avant le projet 
+
+Tomiiiks/PROJECT_WEB_OCRES/Mock up.pdf
+
+## Difficultés
+
+Nous avons eu comme problémes la réalisation de google translate mais aussi une API qui a crash.
+De plus la gestion de la BDD a été compliqué.
+
+## Trello
+
+Voici notre organisation : https://trello.com/b/ojz8jCBQ/tableau-agile
+
+## Résultat 
 
