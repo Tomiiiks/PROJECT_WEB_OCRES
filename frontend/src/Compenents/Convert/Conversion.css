@@ -1,4 +1,4 @@
-.conversion__container{
+.conversion__container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,30 +11,33 @@
 
 
 
-.conversion{
-    background-color: #FFDF9A;
+.conversion {
+    background-color: var(--Header-color);
 }
 
-.exchange-rate__container{
-    border : 1px solid #14142B;
+.exchange-rate__container {
+    border: 1px solid #14142B;
     border-radius: 10px;
 }
 
-.conversion{
+.conversion {
     padding: 2px;
     margin: 2px;
     text-align: center;
 }
-.exchange-rate{
-    background-color: #FFE6B0;
+
+.exchange-rate {
+    background-color: var(--Header-color);
     padding: 2px;
     margin: 2px;
     margin-top: 1px;
     box-shadow: 0 10px 20px rgb(0 0 0 / 0.3);
 }
 
-button:hover{
-    background-color: rebeccapurple;
+td {
+    color: var(--BG-color);
 }
 
-
+.colorh4ExchangeRate {
+    color: var(--BG-color);
+}
