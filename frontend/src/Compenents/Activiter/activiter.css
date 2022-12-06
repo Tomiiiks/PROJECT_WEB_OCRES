@@ -1,6 +1,6 @@
 .activiter {
     width: 300px;
     height: 300px;
-    background-color: aliceblue;
-    color: blue;
+    background-color: var(--Header-color);
+    color: var(--BG-color);
 }
